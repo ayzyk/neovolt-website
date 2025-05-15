@@ -67,12 +67,12 @@ export default function HomePage() {
               >
                 Заказать консультацию
               </Link>
-              <Link
+              {/* <Link
                 href="/portfolio"
                 className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white px-8 py-3 text-lg rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 Наши работы
-              </Link>
+              </Link> */}
             </motion.div>
           </motion.div>
         </div>

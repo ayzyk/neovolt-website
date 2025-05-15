@@ -514,6 +514,7 @@ export default function EquipmentPage() {
                 transition={{ delay: 1.1 }}
                 className="mt-8 flex justify-between items-center"
               >
+               {/*
                 <motion.button
                   onClick={handleOrder}
                   className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
@@ -522,6 +523,7 @@ export default function EquipmentPage() {
                 >
                   Заказать
                 </motion.button>
+                */}
               </motion.div>
             </div>
           </motion.div>

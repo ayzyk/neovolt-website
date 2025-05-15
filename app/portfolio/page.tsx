@@ -1,0 +1,192 @@
+'use client';
+
+import { motion } from 'framer-motion';
+import Image from 'next/image';
+
+interface Project {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+  category: string;
+  features: string[];
+}
+
+const projects: Project[] = [
+  {
+    id: 1,
+    title: 'Умный дом в ЖК "Престиж"',
+    description: 'Комплексная автоматизация квартиры площадью 120 кв.м',
+    image: '/projects/smart-home-1.jpg',
+    category: 'Умный дом',
+    features: [
+      'Управление освещением',
+      'Климат-контроль',
+      'Система безопасности',
+      'Мультирум'
+    ]
+  },
+  {
+    id: 2,
+    title: 'Офисный комплекс "Бизнес-Парк"',
+    description: 'Системы безопасности и автоматизации для бизнес-центра',
+    image: '/projects/office-1.jpg',
+    category: 'Коммерческие объекты',
+    features: [
+      'Контроль доступа',
+      'Видеонаблюдение',
+      'Умное освещение',
+      'Сетевая инфраструктура'
+    ]
+  },
+  {
+    id: 3,
+    title: 'Загородный дом в Подмосковье',
+    description: 'Автоматизация коттеджа с системой "умный дом"',
+    image: '/projects/cottage-1.jpg',
+    category: 'Умный дом',
+    features: [
+      'Управление отоплением',
+      'Видеонаблюдение',
+      'Система полива',
+      'Управление воротами'
+    ]
+  },
+  {
+    id: 4,
+    title: 'Торговый центр "Меридиан"',
+    description: 'Комплексная система безопасности и автоматизации',
+    image: '/projects/mall-1.jpg',
+    category: 'Коммерческие объекты',
+    features: [
+      'Система видеонаблюдения',
+      'Контроль доступа',
+      'Пожарная сигнализация',
+      'Управление освещением'
+    ]
+  }
+];
+
+export default function PortfolioPage() {
+  return (
+    <div className="min-h-screen bg-white dark:bg-[#0a0a0a] py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-center mb-16 relative pt-20"
+        >
+          <motion.div
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 0.15 }}
+            transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-32 bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-600 dark:to-purple-600 rounded-full blur-3xl"
+          />
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="relative z-10 mt-8"
+          >
+            <span className="text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-400 drop-shadow-lg">
+              Портфолио
+            </span>
+          </motion.h1>
+          <motion.div
+            initial={{ width: 0, opacity: 0 }}
+            animate={{ width: "200px", opacity: 1 }}
+            transition={{ duration: 1, delay: 0.4, ease: "easeOut" }}
+            className="h-1.5 bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-600 dark:to-purple-600 mx-auto my-8 rounded-full shadow-lg"
+          />
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            className="text-2xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto relative z-10 font-medium"
+          >
+            Наши реализованные проекты
+          </motion.p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.id}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ 
+                scale: 1.02,
+                boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+              }}
+              className="bg-white dark:bg-[#0a0a0a] rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+            >
+              <motion.div 
+                className="relative h-64 overflow-hidden"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition-transform duration-300"
+                />
+              </motion.div>
+              <div className="p-6">
+                <motion.div 
+                  className="flex items-center justify-between mb-4"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <h2 className="text-2xl font-semibold text-gray-800 dark:text-white">
+                    {project.title}
+                  </h2>
+                  <motion.span 
+                    className="px-3 py-1 text-sm font-medium text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-900/20 rounded-full"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.3 }}
+                  >
+                    {project.category}
+                  </motion.span>
+                </motion.div>
+                <motion.p 
+                  className="text-gray-600 dark:text-gray-300 mb-4"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  {project.description}
+                </motion.p>
+                <motion.div 
+                  className="space-y-2"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  {project.features.map((feature, idx) => (
+                    <motion.div 
+                      key={idx} 
+                      className="flex items-center"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: 0.5 + idx * 0.1 }}
+                    >
+                      <svg className="h-5 w-5 text-blue-500 dark:text-blue-400 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span className="text-gray-600 dark:text-gray-300">{feature}</span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+} 

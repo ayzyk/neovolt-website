@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply bg-black text-white dark:bg-white dark:text-black px-6 py-2 rounded-lg hover:bg-accent-dark transition-colors;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-800 text-white dark:bg-gray-200 dark:text-black px-6 py-2 rounded-lg hover:bg-gray-700 transition-colors;
+  }
+
+  .btn-white {
+    @apply bg-white text-accent px-6 py-2 rounded-lg hover:bg-gray-100 transition-colors;
+  }
+
+  .container-custom {
+    @apply container mx-auto px-4;
+  }
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: 255, 255, 255;
+}
+
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-rgb: 10, 10, 10;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+/* Custom styles for form elements */
+input, textarea {
+  @apply bg-white dark:bg-[#0a0a0a] text-black dark:text-white border-gray-300 dark:border-gray-700;
+}
+
+/* Custom styles for cards and containers */
+.card {
+  @apply bg-white dark:bg-[#0a0a0a] text-black dark:text-white;
+}
+
+/* Custom styles for buttons */
+.btn-primary {
+  @apply bg-black text-white dark:bg-white dark:text-black;
+}
+
+.btn-secondary {
+  @apply bg-gray-800 text-white dark:bg-gray-200 dark:text-black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} 

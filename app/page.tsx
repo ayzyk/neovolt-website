@@ -173,12 +173,12 @@ export default function HomePage() {
                       scale: 1.05,
                       boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
                     }}
-                    className="bg-white/10 backdrop-blur-sm dark:bg-gray-800/50 p-6 rounded-xl border border-white/10 dark:border-gray-700"
+                    className="bg-gray-800/90 backdrop-blur-sm p-6 rounded-xl border border-gray-700"
                   >
-                    <h3 className="text-xl font-bold mb-2 text-white dark:text-white">
+                    <h3 className="text-xl font-bold mb-2 text-white">
                       {item.title}
                     </h3>
-                    <p className="text-gray-300 dark:text-gray-300">
+                    <p className="text-gray-300">
                       {item.description}
                     </p>
                   </motion.div>

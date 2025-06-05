@@ -24,16 +24,16 @@ const contactInfo = [
     description: 'neo.volt@yahoo.com',
     link: 'mailto:neo.volt@yahoo.com'
   },
-  {
+  /*{
     icon: MapPinIcon,
     title: 'Адрес',
     description: 'г. Москва, ул. Примерная, д. 123',
     link: 'https://maps.google.com'
-  },
+  },*/
   {
     icon: ClockIcon,
     title: 'Режим работы',
-    description: 'Пн-Пт: 9:00 - 18:00',
+    description: 'Пн-Пт: 9:00 - 23:00, Сб-Вс: 10:00 - 22:00',
     link: null
   }
 ];

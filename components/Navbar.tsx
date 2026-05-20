@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { withAssetPrefix } from '@/lib/assetPrefix';
 import { useTheme } from 'next-themes';
 import { Bars3Icon, XMarkIcon, MoonIcon, SunIcon } from '@heroicons/react/24/outline';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -34,7 +35,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex items-center">
             <Image
-              src="/images/NeoVolt.png"
+              src={withAssetPrefix('/images/NeoVolt.png')}
               alt="NeoVolt Logo"
               width={60}
               height={60}

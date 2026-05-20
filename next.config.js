@@ -3,6 +3,9 @@ const repo = 'neovolt-website';
 const isGithubPages = process.env.GITHUB_PAGES === 'true';
 
 const nextConfig = {
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isGithubPages ? `/${repo}` : '',
+  },
   ...(isGithubPages
     ? {
         output: 'export',

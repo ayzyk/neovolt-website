@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { withAssetPrefix } from '@/lib/assetPrefix';
 import { useState } from 'react';
 import OrderForm from '@/components/OrderForm';
 import { ShieldCheckIcon, VideoCameraIcon, WifiIcon, BoltIcon, SpeakerWaveIcon, HomeIcon } from '@heroicons/react/24/outline';
@@ -381,7 +382,7 @@ export default function EquipmentPage() {
                 transition={{ duration: 0.3 }}
               >
                 <Image
-                  src={item.image}
+                  src={withAssetPrefix(item.image)}
                   alt={item.title}
                   fill
                   className="object-cover transition-transform duration-300"
@@ -456,7 +457,7 @@ export default function EquipmentPage() {
               transition={{ delay: 0.2 }}
             >
               <Image
-                src={selectedEquipment.image}
+                src={withAssetPrefix(selectedEquipment.image)}
                 alt={selectedEquipment.title}
                 fill
                 className="object-cover"

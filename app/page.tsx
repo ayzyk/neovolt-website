@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { withAssetPrefix } from '@/lib/assetPrefix';
 
 export default function HomePage() {
   return (
@@ -16,7 +17,7 @@ export default function HomePage() {
           transition={{ duration: 2, ease: "easeOut" }}
         >
           <Image
-            src="/images/hero-bg.jpg?v=1"
+            src={withAssetPrefix('/images/hero-bg.jpg?v=1')}
             alt="Профессиональный электромонтаж"
             fill
             className="object-cover"
@@ -87,7 +88,7 @@ export default function HomePage() {
           transition={{ duration: 1 }}
         >
           <Image
-            src="/images/NeoVolt.png"
+            src={withAssetPrefix('/images/NeoVolt.png')}
             alt="NEOVOLT Background"
             fill
             className="object-cover"

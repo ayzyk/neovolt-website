@@ -96,6 +96,20 @@ export default function ContactPage() {
     });
 
     try {
+      if (process.env.NEXT_PUBLIC_GITHUB_PAGES === 'true') {
+        const subject = encodeURIComponent(`NEOVOLT: сообщение от ${formData.name}`);
+        const body = encodeURIComponent(
+          `Имя: ${formData.name}\nТелефон: ${formData.phone}\nEmail: ${formData.email}\n\n${formData.message}`
+        );
+        window.location.href = `mailto:neo.volt@yahoo.com?subject=${subject}&body=${body}`;
+        setStatus({
+          type: 'success',
+          message: 'Откроется почтовый клиент — отправьте письмо, чтобы связаться с нами.'
+        });
+        setFormData({ name: '', email: '', phone: '', message: '' });
+        return;
+      }
+
       const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {

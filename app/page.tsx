@@ -17,7 +17,7 @@ export default function HomePage() {
           transition={{ duration: 2, ease: "easeOut" }}
         >
           <Image
-            src={withAssetPrefix('/images/hero-bg.jpg?v=1')}
+            src={withAssetPrefix('/images/hero-bg.jpg')}
             alt="Профессиональный электромонтаж"
             fill
             className="object-cover"
